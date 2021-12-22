@@ -2,8 +2,6 @@
 
 /*
    FUNDAMENTALS OF COMPUTER PROGRAMMING
-
-   lecture 7: streams + structures
  */
 
 #define debug(x)  std::cerr << "(" << __LINE__ << ") " << #x << " == " << (x) << std::endl
@@ -19,9 +17,15 @@ using namespace std;
 #include "functions.h"
 #include "structures.h"
 #include "functions.cpp"
+#include<string.h>
 
 
-
+/**
+ * 
+ * 
+ * Main views of the programme, responsible for collecting data and calling the model to solve the problem. 
+ * 
+ */
 int main(){
     std::cout << "Enter the name of the file containing the first matrix (including the extension)" << std::endl;
     std::string matrix1;
@@ -64,10 +68,27 @@ int main(){
             }
         }
         else{
-            if(firstMatrix[0].size() == secondMatrix.size()){
-                            aux = transposition(firstMatrix, secondMatrix); 
-                            printMatrix(aux);
-        }          
-    }
-            
+            std::cout << "Which matrix do you want to transpose? (1-2) " << std::endl;
+            int option;
+            cin >> option;
+            if(option == 1){
+              aux = transposition(firstMatrix);
+              printMatrix(aux);
+            }else{
+            aux = transposition(secondMatrix);
+            printMatrix(aux);
+            }
+        }
+        if(x > 0){
+            std::cout << "Do you want to save the result in a file? (Y/n) " << std::endl;
+            std::string option;
+            cin >> option;
+            if(option.compare("Y") == 0){
+                std::cout << "What do you want to call the file? " << std::endl;
+                std::string name;
+                cin >> name;
+                print_matrix(name,aux);
+            }
+        }
+    }       
 }
