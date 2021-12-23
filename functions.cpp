@@ -69,7 +69,6 @@ std::vector<std::vector<double>>  addition(std::vector<std::vector<double>> matr
 		{
 			aux[row][col] = matrix1[row][col] + matrix2[row][col];
 		}
-		std::cout << std::endl;
 	}
 
 	return aux;
@@ -85,14 +84,13 @@ std::vector<std::vector<double>>  subtraction(std::vector<std::vector<double>> m
 		{
 			aux[row][col] = matrix1[row][col] - matrix2[row][col];
 		}
-		std::cout << std::endl;
 	}
 	
 	return aux;
 }
 
 std::vector<std::vector<double>>  multiplication(std::vector<std::vector<double>> matrix1, std::vector<std::vector<double>> matrix2){
-	std::vector<std::vector<double>> aux(matrix1.size(), vector<double> (matrix1.size(), 0)); 
+	std::vector<std::vector<double>> aux(matrix1.size(), std::vector<double> (matrix1.size(), 0)); 
 
 	for (std::size_t row = 0; row < matrix1.size();  row++){
 		for (std::size_t col = 0; col < matrix2[0].size(); col++){
@@ -102,20 +100,18 @@ std::vector<std::vector<double>>  multiplication(std::vector<std::vector<double>
 			}
 		aux[row][col] = sum;
 		}
-		std::cout << std::endl;
 	}
 	
 	return aux;
 }
 
 std::vector<std::vector<double>>  transposition(std::vector<std::vector<double>> matrix){
-	std::vector<std::vector<double>> aux(matrix[0].size(), vector<double> (matrix.size(), 0));
+	std::vector<std::vector<double>> aux(matrix[0].size(), std::vector<double> (matrix.size(), 0));
 
 	for (std::size_t row = 0; row < matrix.size();  row++){
 		for (std::size_t col = 0; col < matrix[0].size(); col++){
 			aux[col][row] = matrix[row][col];
 		}
-		std::cout << std::endl;
 	}
 	return aux;
 }
