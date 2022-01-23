@@ -33,8 +33,7 @@ std::vector<std::vector<double>> read_matrix(const std::string& FILE_NAME){
 	std::vector<std::vector<double>> matrix; 
 
 	std::ifstream file (FILE_NAME);  // input file stream + open
-	if (file)
-	{
+	if (file){
 		std::string line; // string!!!
 		while (getline(file, line))
 		{
@@ -114,19 +113,6 @@ std::vector<std::vector<double>>  transposition(std::vector<std::vector<double>>
 		}
 	}
 	return aux;
-}
-
-int menu(){
- 	std::cout << "Choose an option (0-4): " << std::endl;
-	std::cout << "0.- Exit " << std::endl;
- 	std::cout << "1.- Add two matrices " << std::endl;
- 	std::cout << "2.- Subtract two matrices " << std::endl;
- 	std::cout << "3.- Multiplying two matrices " << std::endl;
- 	std::cout << "4.- Transpose a matrix " << std::endl;
-
-    int option;
-    cin >> option; 
-	return option;
 }
 
 void printMatrix( std::vector<std::vector<double>> aux){

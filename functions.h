@@ -49,11 +49,5 @@ std::vector<std::vector<double>>  multiplication(std::vector<std::vector<double>
  */
 std::vector<std::vector<double>>  transposition(std::vector<std::vector<double>> matrix);
 
-/** The function prints the menu options and picks up the option chosen by the user.
-  @return the chosen option
- */
-int menu();
-
-
 
 #endif
