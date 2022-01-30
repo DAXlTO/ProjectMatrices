@@ -24,6 +24,13 @@ using std::filesystem::exists;
 using namespace std;
 
 
+
+/**
+ * 
+ * 
+ * Method for displaying programme help on the screen.
+ * 
+ */
 void help(){
         std::cout <<  std::endl;   
         std::cout << "NAME" << std::endl;   
@@ -66,6 +73,25 @@ void help(){
         std::cout <<  std::endl;   
 }
 
+
+/**
+ * 
+ * 
+ * Method for verifying that the parameters are correct
+ * 
+ */
+void verifyParameters(int argc){
+    if(argc == 1 || argc == 2){
+        help();
+        exit(0);
+    }if(argc == 5 || argc == 7){
+       return;
+    } 
+     std::cout << "Incorrect paramters!" << std::endl;   
+        std::cout << "Type -h if you need help." << std::endl;   
+        exit(0);
+}
+
 /**
  * 
  * 
@@ -74,10 +100,8 @@ void help(){
  */
 int main(int argc, char* argv[]){
 
-    if(argc == 1 || strcmp(argv[1], "-h") == 0){
-        help();
-        exit(0);
-    }
+    verifyParameters(argc);
+
 
     if(argc == 5){
         std::vector<std::string> cmdLineArgs(argv, argv+argc);
@@ -93,7 +117,7 @@ int main(int argc, char* argv[]){
                     std::cout << "File " << argv[counter+1] << " not found!" << std::endl;   
                     exit(0);
                 }
-                
+               
             }
             else if(arg == "-o"){
                 fileOutput = argv[counter+1];
@@ -159,9 +183,6 @@ int main(int argc, char* argv[]){
                 std::cout << "The size of the matrix has to be MxN and NxM." << std::endl;                
             }
         }
-    }else{
-        std::cout << "Incorrect paramters!" << std::endl;   
-        std::cout << "Type -h if you need help." << std::endl;   
     }
     std::vector<std::string> cmdLineArgs(argv, argv+argc);
 
