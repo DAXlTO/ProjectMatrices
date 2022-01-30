@@ -89,6 +89,7 @@ void verifyParameters(int argc){
     } 
      std::cout << "Incorrect paramters!" << std::endl;   
         std::cout << "Type -h if you need help." << std::endl;   
+        help();
         exit(0);
 }
 
